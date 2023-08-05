@@ -5,13 +5,11 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomSheet(
-      builder: (BuildContext context) {
+
         return Container(
 
+
         );
-      },
-      onClosing: () {},
-    );
+
   }
 }
