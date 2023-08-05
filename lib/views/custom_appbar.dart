@@ -8,7 +8,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Row(children: [
-      Text(title,style: TextStyle(fontSize: 28,color: Colors.white,inherit: false)),
+      Text(title,style: const TextStyle(fontSize: 28,color: Colors.white,inherit: false)),
       const Spacer(),
         CustomIcon(iconData: iconData),
     ],);
