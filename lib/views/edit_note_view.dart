@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:note_app/views/edit_note_view_body.dart';
 
 class EditNoteView extends StatelessWidget {
@@ -6,6 +7,6 @@ class EditNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const EditNoteViewBody();
+    return Scaffold(body: const EditNoteViewBody(),);
   }
 }
