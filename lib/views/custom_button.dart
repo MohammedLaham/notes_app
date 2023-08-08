@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:note_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key}) : super(key: key);
-
+  const CustomButton({Key? key,this.onTap}) : super(key: key);
+  final void Function() ?onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
       //من خلالها بقدر اصل لاي اشي اله علاقة بسكرين الجهاز
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
@@ -22,6 +24,6 @@ class CustomButton extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
       ),
-    );
+    ),);
   }
 }

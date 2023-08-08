@@ -1,7 +1,12 @@
 import 'package:hive/hive.dart';
-//لانشاء ملف adapter type يلزم في التيرمينال هذا السطر
+/*
+خطوات التعامل مع hive
+1- انشاء@HiveType(typeId: 0) والتاكد من ان الرقم فريد
+2- انشاء @HiveField(0) لكل اشي بدي اخزنه
+3- عمل part 'note_model.g.dart';
+4- الذهاب الى تيرمينال وكتابة السطر هذا flutter packages pub run build_runner build في الاسفل لانشاء ملف adapter type يلزم في التيرمينال هذا السطر
+ */
 
-//flutter packages pub run build_runner build
 part 'note_model.g.dart';
 @HiveType(typeId: 0)
 class NoteModel extends HiveObject{
