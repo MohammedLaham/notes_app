@@ -17,26 +17,23 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return    BlocProvider(create: (context) => AddNoteCubit(),
+    child:  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-          child: MultiBlocProvider(
-              providers: [
-            BlocProvider(create: (context) => AddNoteCubit()),
-          ],
-              child: BlocConsumer<AddNoteCubit, AddNoteState>(
-                  builder: (context, state) {
-                    return ModalProgressHUD(
-                        inAsyncCall: state is AddNoteLoading ? true : false,
-                        child: const AddNoteForm());
-                  },
-                  listener: (context, state) {
-                    if(state is AddNoteFailure){
+          child: BlocConsumer<AddNoteCubit, AddNoteState>(
+              builder: (context, state) {
+                return ModalProgressHUD(
+                    inAsyncCall: state is AddNoteLoading ? true : false,
+                    child: const SingleChildScrollView(child: AddNoteForm()));
+              },
+              listener: (context, state) {
+                if (state is AddNoteFailure) {
 
-                    } if(state is AddNoteSuccess){
-                      Navigator.pop(context);
-                    }
-                  }))),
+                }
+                if (state is AddNoteSuccess) {
+                  Navigator.pop(context);
+                }
+              })),
     );
   }
 }
