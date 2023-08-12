@@ -8,10 +8,13 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //تعبر عن ارتفاع الكيبورد ويعني انه انا مش محتاج السكرين تغير من حجمها عشان تناسب الكيبورد لما تظهر
+    //  resizeToAvoidBottomInset: false,
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16)),
               context: context,

@@ -24,9 +24,12 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
         return  AbsorbPointer(
           //عشان تمنعك من عمل اي اشي ع السكرين في حال كان بيحمل
           absorbing: state is AddNoteLoading ? true : false ,
-          child:const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: SingleChildScrollView(child: AddNoteForm())),
+          child: Padding(
+              padding: EdgeInsets.only(left: 16,right: 16,
+                  //عشان تعمل مسافة من تحت تكون هذه المسافة بحجم الكيبورد
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+
+              child:const SingleChildScrollView(child: AddNoteForm())),
         );
       }, listener: (context, state) {
         if (state is AddNoteFailure) {}
