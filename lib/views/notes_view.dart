@@ -9,11 +9,9 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: Scaffold(
+    return Scaffold(
         //تعبر عن ارتفاع الكيبورد ويعني انه انا مش محتاج السكرين تغير من حجمها عشان تناسب الكيبورد لما تظهر
-        //  resizeToAvoidBottomInset: false,
+         resizeToAvoidBottomInset: false,
         body: const NotesViewBody(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -30,7 +28,7 @@ class NotesView extends StatelessWidget {
             Icons.add,
           ),
         ),
-      ),
+
     );
   }
 }
