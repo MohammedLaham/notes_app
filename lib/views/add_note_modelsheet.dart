@@ -29,7 +29,6 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
               padding: EdgeInsets.only(left: 16,right: 16,
                   //عشان تعمل مسافة من تحت تكون هذه المسافة بحجم الكيبورد
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-
               child:const SingleChildScrollView(child: AddNoteForm())),
         );
       }, listener: (context, state) {
@@ -42,3 +41,4 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
     );
   }
 }
+
