@@ -4,6 +4,7 @@ import 'package:note_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/custom_appbar.dart';
 import 'package:note_app/views/custom_textfield.dart';
+import 'package:note_app/views/editnote_colors_listview.dart';
 
 //عند انشاء اي متغير يلزمني statefullwedgit
 class EditNoteViewBody extends StatefulWidget {
@@ -55,6 +56,12 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               },
               hint: widget.noteModel.subTitle,
               maxLines: 5),
+          const SizedBox(
+            height: 16,
+          ),
+          EditNoteColorList(
+            noteModel: widget.noteModel,
+          )
         ],
       ),
     );
